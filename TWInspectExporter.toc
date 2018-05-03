@@ -1,0 +1,6 @@
+## Interface: 70300
+## Title: TWInspectExporter
+## Author: Emanuel fusty Thieme
+## Version: 0.1
+
+main.lua
