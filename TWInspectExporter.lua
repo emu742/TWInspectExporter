@@ -16,9 +16,15 @@ local PAPERDOLL_FRAME_EVENTS = {
 	"AZERITE_EMPOWERED_ITEM_SELECTION_UPDATED",
 };
 
-function TinyCasterStats:OnEnable()
+local function OnLoad()
   LoadStats(frame, "player")
 end
+
+frame:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
+frame:SetScript("OnEvent", function(self, event, arg1)
+    OnLoad();
+end)
+
 
 function LoadStats(statFrame, unit)
   SetHealth(statFrame, unit)
@@ -29,7 +35,7 @@ function SetHealth(statFrame, unit)
 		unit = "player";
 	end
 	local health = UnitHealthMax(unit);
-  printToChat(string.format("Gesundheit: %i", health));
+  printToChat(string.format('Gesundheit: %i', health));
 end
 
 
@@ -44,5 +50,5 @@ end
 
 
 function printToChat(msg)
-  DEFAULT_CHAT_FRAME:AddMessage(GREEN_FONT_COLOR_CODE.."SA: |r"..tostring(msg))
+  DEFAULT_CHAT_FRAME:AddMessage(GREEN_FONT_COLOR_CODE.."Debug: |r"..tostring(msg))
 end

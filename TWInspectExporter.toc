@@ -4,4 +4,4 @@
 ## Version: 0.1
 ## SavedVariablesPerCharacter: TWInspectExporterDB
 
-main.lua
+TWInspectExporter.lua
