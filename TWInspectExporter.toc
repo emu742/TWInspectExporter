@@ -2,5 +2,6 @@
 ## Title: TWInspectExporter
 ## Author: Emanuel fusty Thieme
 ## Version: 0.1
+## SavedVariablesPerCharacter: TWInspectExporterDB
 
 main.lua
